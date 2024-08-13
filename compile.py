@@ -8,6 +8,8 @@ ccode = (file_to_compile.read()).split("\n")
 
 for i in ccode:        
     i = i.split("-")
+    for elem in i:
+        elem.replace("&hypen", "-")
     if (i[0]=="PRINT "):
         print(i[1][2:-1], end="")
     elif (i[0]=="fPRINT "):
@@ -21,3 +23,5 @@ for i in ccode:
         exec(f"{str(i[2][1:])}=input(i[1][2:-2])")
     elif (i[0]=="showVAR "):
         print(eval(i[1][1:]), end="")
+    elif (i[0]=="takeVAR "):
+        exec(f"{i[1][1:-1]} = {i[2][1:]}")
