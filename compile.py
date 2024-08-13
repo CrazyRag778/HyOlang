@@ -32,12 +32,20 @@ for i in ccode:
     elif (i[0]=="takeVAR "):
         exec(f"{i[1][1:-1]} = {i[2][1:]}")
     elif (i[0]=="ALLOW "):
-        allowed_module[i[1][1:]] = 1
+        allowed_module[str(i[1][1:])] = 1
     elif (i[0]=="END"):
         exit()
     
     # BUILT-IN module
     # FILE module
-    elif (i[0][0:4]=="FILE."):
-        if (i[0][5:]=="ACCESS "):
-            exec(f"{i[3][1:]} = open('{i[1][1:-1]}', '{i[2][1:-1].lower()}')")
+    elif (i[0][0:5]=="FILE."):
+        if (allowed_module["FILE"]==1):
+            if (i[0][5:]=="ACCESS "):
+                exec(f"{i[3][1:]} = open('{i[1][1:-1]}', '{i[2][1:-1].lower()}')")
+            elif (i[0][5:]=="CLOSE "):
+                exec(f"{i[1][1:]}.close()")
+            elif (i[0][5:]=="CREATE "):
+                exec(f"{i[2][1:]} = open('{i[1][1:-1]}', 'x')")
+    
+        
+        
