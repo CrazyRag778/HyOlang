@@ -3,8 +3,9 @@ PRINT - "WORLD!"
 fPRINT - 12+9
 TYPE - 8
 TYPE - "HELLO"
-END
-INPUT - "ENTER NAME: " - name
-showVAR - name
+takeVAR - us - 4
+#INPUT - "ENTER NAME: " - name
+showVAR - us
 takeVAR - age - 12
 fPRINT - age
+ACCESS - man\\syntax.txt - R+ - file1
