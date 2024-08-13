@@ -27,3 +27,5 @@ for i in ccode:
         print(f"<OBJECT {get_real_type(i[1])}>")
     elif (i[0]=="INPUT "):
         exec(f"{str(i[2][1:])}=input(i[1][2:-2])")
+    elif (i[0]=="showVAR "):
+        print(eval(i[1][1:]))

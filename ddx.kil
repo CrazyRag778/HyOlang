@@ -4,3 +4,4 @@ fPRINT - 12+9
 TYPE - 8
 TYPE - "HELLO"
 INPUT - "ENTER NAME: " - name
+showVAR - name
