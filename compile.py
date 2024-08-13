@@ -14,8 +14,10 @@ for i in ccode:
     i = i.split("-")
     for elem in i:
         elem.replace("&hypen", "-")
-    if (i[0]=="PRINT "):
+    if (i[0]=="rawPRINT "):
         print(i[1][2:-1], end="")
+    if (i[0]=="PRINT "):
+        print(i[1][2:-1])
     elif (i[0]=="fPRINT "):
         print(eval(i[1][1:]), end="")
     elif (i[0]=="LOOpRINT "):
