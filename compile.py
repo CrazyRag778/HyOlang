@@ -1,6 +1,7 @@
 import sys
 import pdb
 import ast
+import os
 
 file_to_compile = open(sys.argv[1], "r+")
 
@@ -46,6 +47,6 @@ for i in ccode:
                 exec(f"{i[1][1:]}.close()")
             elif (i[0][5:]=="CREATE "):
                 exec(f"{i[2][1:]} = open('{i[1][1:-1]}', 'x')")
-    
-        
+            elif (i[0][5:]=="DELETE "):
+                exec(f"os.remove('{i[1][1:]}')")        
         
