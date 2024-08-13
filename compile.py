@@ -13,8 +13,6 @@ allowed_module = {
 
 for i in ccode:        
     i = i.split("-")
-    for elem in i:
-        elem.replace("&hypen", "-")
     if (i[0]=="rawPRINT "):
         print(i[1][2:-1], end="")
     if (i[0]=="PRINT "):
