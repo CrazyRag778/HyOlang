@@ -1,4 +1,4 @@
-PRINT - "HELLO"
+LOOpRINT - "HELLO" - "SOMEONE" - " "
 PRINT - "WORLD!"
 fPRINT - 12+9
 TYPE - 8

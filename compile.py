@@ -23,6 +23,9 @@ for i in ccode:
         print(i[1][2:-1], end="")
     elif (i[0]=="fPRINT "):
         print(eval(i[1][1:]))
+    elif (i[0]=="LOOpRINT "):
+        for iIndexEl in range(1, len(i)):
+            print(i[iIndexEl][2:-2])
     elif (i[0]=="TYPE "):
         print(f"<OBJECT {get_real_type(i[1])}>")
     elif (i[0]=="INPUT "):
