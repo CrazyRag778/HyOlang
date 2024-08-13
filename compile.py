@@ -27,7 +27,7 @@ for i in ccode:
     elif (i[0]=="TYPE "):
         print(f"<OBJECT {type(ast.literal_eval(i[1])).__name__}>", end="")
     elif (i[0]=="INPUT "):
-        exec(f"{str(i[2][1:])}=input(i[1][2:-2])")
+        exec(f"{str(i[2][1:])}=input('{i[1][2:-2]}')")
     elif (i[0]=="showVAR "):
         print(eval(i[1][1:]), end="")
     elif (i[0]=="takeVAR "):
@@ -48,5 +48,5 @@ for i in ccode:
             elif (i[0][5:]=="CREATE "):
                 exec(f"{i[2][1:]} = open('{i[1][1:-1]}', 'x')")
             elif (i[0][5:]=="DELETE "):
-                exec(f"os.remove('{i[1][1:]}')")        
-        
+                exec(f"os.remove({i[1][1:]}.name)")        
+    
