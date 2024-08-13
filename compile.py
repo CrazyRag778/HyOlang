@@ -20,7 +20,7 @@ def get_real_type(s):
 for i in ccode:        
     i = i.split("-")
     if (i[0]=="PRINT "):
-        print(i[1][2:-1])
+        print(i[1][2:-1], end="")
     elif (i[0]=="fPRINT "):
         print(eval(i[1][1:]))
     elif (i[0]=="TYPE "):
