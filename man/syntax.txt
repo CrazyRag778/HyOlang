@@ -1,0 +1,3 @@
+PRINT = prints a data
+fPRINT = prints data with calculations
+TYPE = Checks type for a object
