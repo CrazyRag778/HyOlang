@@ -1,3 +1,5 @@
+ALLOW - FILE
+
 LOOpRINT - "HELLO" - "SOMEONE" - " "
 PRINT - "WORLD!"
 fPRINT - 12+9
@@ -8,4 +10,4 @@ takeVAR - us - 4
 showVAR - us
 takeVAR - age - 12
 fPRINT - age
-ACCESS - man\\syntax.txt - R+ - file1
+FILE.ACCESS - man\\syntax.txt - R+ - file1

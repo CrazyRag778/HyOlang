@@ -6,6 +6,10 @@ file_to_compile = open(sys.argv[1], "r+")
 
 ccode = (file_to_compile.read()).split("\n")
 
+allowed_module = {
+    "FILE": 0,
+}
+
 for i in ccode:        
     i = i.split("-")
     for elem in i:
@@ -25,7 +29,13 @@ for i in ccode:
         print(eval(i[1][1:]), end="")
     elif (i[0]=="takeVAR "):
         exec(f"{i[1][1:-1]} = {i[2][1:]}")
-    elif (i[0]=="ACCESS "):
-        exec(f"{i[3][1:]} = open('{i[1][1:-1]}', '{i[2][1:-1].lower()}')")
+    elif (i[0]=="ALLOW "):
+        allowed_module[i[1][1:]] = 1
     elif (i[0]=="END"):
         exit()
+    
+    # BUILT-IN module
+    # FILE module
+    elif (i[0][0:4]=="FILE."):
+        if (i[0][5:]=="ACCESS "):
+            exec(f"{i[3][1:]} = open('{i[1][1:-1]}', '{i[2][1:-1].lower()}')")
