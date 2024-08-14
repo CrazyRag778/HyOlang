@@ -1,4 +1,4 @@
-ALLOW - FILE
+@ALLOW - FILE
 
 LOOpRINT - "HELLO" - "SOMEONE" - " "
 PRINT - "WORLD!"
