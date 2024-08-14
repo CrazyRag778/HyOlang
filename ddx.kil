@@ -1,4 +1,4 @@
-#ALLOW - FILE
+ALLOW - FILE
 
 LOOpRINT - "HELLO" - "SOMEONE" - " "
 PRINT - "WORLD!"
@@ -13,5 +13,6 @@ fPRINT - age
 FILE.ACCESS - man\\syntax.txt - R+ - file1
 FILE.CLOSE - file1
 FILE.CREATE - man\\sometext2.txt - st2
+FILE.WRITE - st2 - "HELLO"
 FILE.CLOSE - st2
 #FILE.DELETE - st2

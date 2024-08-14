@@ -47,4 +47,5 @@ for i in ccode:
                 exec(f"{i[2][1:]} = open('{i[1][1:-1]}', 'x')")
             elif (i[0][5:]=="DELETE "):
                 exec(f"os.remove({i[1][1:]}.name)")        
-    
+            elif (i[0][5:]=="WRITE "):
+                exec(f"{i[1][1:-1]}.write({i[2][1:]})")    
