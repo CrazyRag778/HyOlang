@@ -1,2 +1,2 @@
-# HylOLang
+# HyOLang
 Weird Things
