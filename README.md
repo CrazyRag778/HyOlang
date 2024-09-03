@@ -1,4 +1,4 @@
-Custom Scripting Language Interpreter
+HyOlang: A Custom Scripting Language Interpreter
 =====================================
 
 This project is a custom interpreter for a simple scripting language. The interpreter reads commands from a file, parses them, and executes various operations such as printing, variable handling, and file operations.
@@ -63,4 +63,4 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 License
 -------
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the Creative Commons Zero v1.0 Universal. See the [LICENSE](LICENSE) file for more details.
