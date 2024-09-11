@@ -32,7 +32,7 @@ Usage
 
 To run the interpreter, use the following command:
 
-    python interpreter.py <script-file>
+    hyolang <script-file>
 
 Where `<script-file>` is the file containing the commands to be executed by the interpreter.
 
@@ -40,20 +40,20 @@ Where `<script-file>` is the file containing the commands to be executed by the 
 
 Here is a sample script that demonstrates the functionality:
 
-    PRINT "Hello, World!"
-    takeVAR -name-INPUT 'Enter your name: ' -name-
-    fPRINT "Hello, {name}!"
     @ALLOW FILE
-    FILE.CREATE 'test.txt' -file-
-    FILE.WRITE -file- "This is a test."
-    FILE.CLOSE -file-
+    PRINT - "Hello, World!"
+    INPUT - "Enter your name: " - name
+    fPRINT - "Hello, {name}!"
+    FILE.CREATE - 'test.txt' - file
+    FILE.WRITE - file - "This is a test."
+    FILE.CLOSE - file
     END
     
 
 Security Considerations
 -----------------------
 
-This interpreter uses `eval` and `exec` for certain operations, which can be a security risk if the input is not properly sanitized. It is recommended to use this interpreter only with trusted scripts.
+This is not a real and working programming language, and was built for educational purpose. Do not use it for professional use!
 
 Contributions
 -------------
