@@ -1,18 +1,18 @@
-@ALLOW - FILE
+@ALLOW - FILE;
 
-LOOpRINT - "HELLO" - "SOMEONE" - " "
-PRINT - "WORLD!"
-fPRINT - 12+9
-TYPE - 8
-TYPE - "HELLO"
-takeVAR - us - 4
-INPUT - "ENTER NAME: " - name
-showVAR - us
-takeVAR - age - 12
-fPRINT - age
-FILE.ACCESS - man\\syntax.txt - R+ - file1
-FILE.CLOSE - file1
-FILE.CREATE - man\\sometext2.txt - st2
-FILE.WRITE - st2 - "HELLO"
-FILE.CLOSE - st2
-#FILE.DELETE - st2
+LOOpRINT - "HELLO" - "SOMEONE" - " ";
+PRINT - "WORLD!";
+fPRINT - 12+9;
+TYPE - 8;
+TYPE - "HELLO";
+take - us - 4;
+INPUT - "ENTER NAME: " - name;
+showVAR - us;
+take - age - 12;
+fPRINT - age;
+FILE.ACCESS - man\\syntax.txt - R+ - file1;
+FILE.CLOSE - file1;
+FILE.CREATE - man\\88.txt - st2;
+FILE.WRITE - st2 - "HELLO";
+FILE.CLOSE - st2;
+#FILE.DELETE - st2;

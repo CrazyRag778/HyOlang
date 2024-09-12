@@ -5,7 +5,7 @@ import os
 
 file_to_compile = open(sys.argv[1], "r+")
 
-ccode = (file_to_compile.read()).split("\n")
+ccode = (file_to_compile.read()).replace('\n', '').split(';')
 
 allowed_module = {
     "FILE": 0,
