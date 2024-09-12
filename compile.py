@@ -28,7 +28,7 @@ for i in ccode:
         exec(f"{str(i[2][1:])}=input('{i[1][2:-2]}')")
     elif (i[0]=="showVAR "):
         print(eval(i[1][1:]), end="")
-    elif (i[0]=="takeVAR "):
+    elif (i[0]=="take "):
         exec(f"{i[1][1:-1]} = {i[2][1:]}")
     elif (i[0]=="@ALLOW "):
         allowed_module[str(i[1][1:])] = 1
