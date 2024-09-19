@@ -43,7 +43,7 @@ Here is a sample script that demonstrates the functionality:
     @ALLOW - FILE;
     PRINT - "Hello, World!";
     INPUT - "Enter your name: " - name;
-    fPRINT - "Hello, {name}!";
+    fPRINT - 2+6;
     FILE.CREATE - test.txt - file;
     FILE.WRITE - file - "This is a test.";
     FILE.CLOSE - file;
