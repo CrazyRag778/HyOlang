@@ -43,7 +43,7 @@ for parsArg in ccode:
     elif (parsArg[0] == "@ALLOW"):
         allowed_module[str(parsArg[1])] = 1
     elif (parsArg[0] == "END"):
-        exit()
+        exec("exit()")
     
     # BUILT-IN module
     # FILE module
