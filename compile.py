@@ -2,7 +2,7 @@ import sys
 import pdb
 import ast
 import os
-import libraries.excsr as excsr
+import core.excsr as excsr
 
 file_to_compile = open(sys.argv[1], "r+")
 
