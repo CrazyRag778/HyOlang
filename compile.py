@@ -62,7 +62,7 @@ for parsArg in ccode:
         elif (parsArg[0]=="BREAK"):
             mainCsr.makeDOWN()
         elif (parsArg[0]=="CONTINUE"):
-            mainCsr.makeDOWN()
+            mainCsr.makeUP()
 
         # Program Properies Access
         elif (parsArg[0] == "#define"):
