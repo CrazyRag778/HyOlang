@@ -1,5 +1,5 @@
 @ALLOW - FILE;
-
+#define - "Hello" - 7;
 rawPRINT - "HELLO";
 LOOpRINT - "HELLO" - "SOMEONE" - " ";
 PRINT - "WORLD!";

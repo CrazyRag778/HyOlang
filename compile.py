@@ -11,6 +11,12 @@ allowed_module = {
     "FILE": 0,
 }
 
+# The properties of the program that can be modifed by "#define" (Future)
+PROPS = {
+    "Author": 0,
+}
+
+
 for parsArg in ccode:
     # Splits the syntax into function and arguments
     parsArg = parsArg.split("-")
@@ -46,6 +52,13 @@ for parsArg in ccode:
         exec("exit()")
     
     # BUILT-IN module
+
+    # Program Properies Access
+    elif (parsArg[0] == "#define"):
+        defiPROP = parsArg[1]
+        defiPROPValue = parsArg[2]
+        exec(f"PROPS[{defiPROP}]={defiPROPValue}")
+
     # FILE module
     elif (parsArg[0][0:5] == "FILE."):
         if (allowed_module["FILE"] == 1):
