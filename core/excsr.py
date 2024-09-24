@@ -11,3 +11,5 @@ class ExecutionCursor():
         self.value = False
     def isUP(self):
         return self.value
+    def isDOWN(self):
+        return not self.value

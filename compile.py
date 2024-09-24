@@ -23,17 +23,20 @@ mainCsr.init()
 
 
 for parsArg in ccode:
-    if (mainCsr.isUP()):
-        # Splits the syntax into function and arguments
-        parsArg = parsArg.split("-")
-        # Removes leading whitespace
-        if len(parsArg[0]) > 0 and parsArg[0][0] == " ":
-            parsArg[0] = parsArg[0].lstrip()
 
-        tempParsArg = []
-        for cO in parsArg:
-            tempParsArg.append(cO.strip())
-        parsArg = tempParsArg
+    # Code Translation
+    # Splits the syntax into function and arguments
+    parsArg = parsArg.split("-")
+    # Removes leading whitespace
+    if len(parsArg[0]) > 0 and parsArg[0][0] == " ":
+        parsArg[0] = parsArg[0].lstrip()
+    tempParsArg = []
+    for cO in parsArg:
+        tempParsArg.append(cO.strip())
+    parsArg = tempParsArg
+    
+
+    if (mainCsr.isUP()):
 
         if (parsArg[0] == "rawPRINT"):
             print(parsArg[1], end="")
@@ -46,7 +49,7 @@ for parsArg in ccode:
                 print(parsArg[parsArgIndexEl], end="")
         elif (parsArg[0] == "TYPE"):
             print(f"<OBJECT {type(ast.literal_eval(parsArg[1])).__name__}>", end="")
-        elif (parsArg[0] == "INPU"):
+        elif (parsArg[0] == "INPUT"):
             exec(f"{str(parsArg[2])}=input('{parsArg[1]}')")
         elif (parsArg[0] == "showVAR"):
             print(eval(parsArg[1]), end="")
@@ -61,8 +64,7 @@ for parsArg in ccode:
         # CONDITIONAL BLOCKING
         elif (parsArg[0]=="BREAK"):
             mainCsr.makeDOWN()
-        elif (parsArg[0]=="CONTINUE"):
-            mainCsr.makeUP()
+            # BREAK moved to down
 
         # Program Properies Access
         elif (parsArg[0] == "#define"):
@@ -83,3 +85,9 @@ for parsArg in ccode:
                     exec(f"os.remove({parsArg[1]}.name)")        
                 elif (parsArg[0][5:] == "WRITE "):
                     exec(f"{parsArg[1]}.write({parsArg[2]})")
+
+
+    # IF mainCsr is up.
+    elif (mainCsr.isDOWN()):
+        if (parsArg[0]=="CONTINUE"):
+            mainCsr.makeUP()
